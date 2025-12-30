@@ -1,0 +1,46 @@
+# Function to calculate average
+def calculate_average(sum_grades, num_entries):
+    avg = sum_grades / num_entries
+    return round(avg, 2)
+
+# Function to check performance status
+def evaluate_performance(average):
+    if average >= 90:
+        return "Excellent"
+    elif average >= 70:
+        return "Good"
+    else:
+        return "Needs Improvement"
+
+# Function to check if affordable
+def check_expense(budget, cost):
+    return budget >= cost
+
+# Main program
+name = input("What is your name? ")
+budget = float(input("What is your monthly budget? $"))
+
+print("\nEnter grades (type 'done' when finished):")
+grades = []
+while True:
+    grade = input("Grade: ")
+    if grade == "done":
+        break
+    grades.append(float(grade))
+
+# Calculate results
+total = sum(grades)
+count = len(grades)
+average = calculate_average(total, count)
+status = evaluate_performance(average)
+
+meal_cost = float(input("\nHow much is the celebration meal? $"))
+can_afford = check_expense(budget, meal_cost)
+
+# Show report
+print("\n--- STUDENT REPORT ---")
+print("Name:", name)
+print("Subjects:", count)
+print("Average:", average)
+print("Status:", status)
+print("Affordable:", "Yes" if can_afford else "No")
