@@ -1,3 +1,5 @@
+//Single & Multilevel Inheritance
+
 class Animal {
     protected String name;
 
