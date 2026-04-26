@@ -1,14 +1,16 @@
 class Animal {
     protected String name;
-    public void eat() { System.out.println(name + " is eating..."); }
+
+    public void eat() {
+        System.out.println(name + " is eating...");
+    }
 }
 
-class Dog extends Animal {  // Single Inheritance
-    public void fetch() { System.out.println(name + " is fetching!"); }
-    @Override public void makeSound() { System.out.println("Woof!"); }
+class Dog extends Animal {
+    public Dog(String name) {
+        this.name = name;
+    }
 }
 
-class BabyDog extends Dog {  // Multilevel Inheritance
-    public void whine() { System.out.println(name + " is whining..."); }
-    @Override public void makeSound() { System.out.println("Yip! Yip!"); }
-}
+public class Main {
+    public
